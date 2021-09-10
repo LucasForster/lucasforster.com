@@ -4,7 +4,7 @@ import '../styles/hero.scss';
 
 const Hero = () => (
   <div className="hero blue-theme full-height">
-    <h1 className="hello">
+    <h1 className="hello fade-in-left">
       Hi, my name is&nbsp;
       <span className="accent">
         Lucas Forster
