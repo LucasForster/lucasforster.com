@@ -1,8 +1,16 @@
 @import "variables";
 
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-left: 5rem;
+}
+
 .hello {
   animation-duration: 1s;
   animation-name: fadeInLeft;
+  text-align: left;
 }
 
 @keyframes fadeInLeft {
