@@ -4,7 +4,7 @@ import '../styles/hero.scss';
 
 const Hero = () => (
   <>
-    <h1>
+    <h1 className="hello">
       Hi, my name is&nbsp;
       <span className="name">
         Lucas Forster
