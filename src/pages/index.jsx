@@ -2,7 +2,7 @@ import React from "react";
 
 import Hero from '../components/Hero';
 
-import '../styles/index.scss';
+import '../styles/main.scss';
 
 const Index = () => (
   <div className="index">

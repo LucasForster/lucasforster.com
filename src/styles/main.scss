@@ -1,0 +1,19 @@
+@import "variables";
+
+* {
+  font-family: sans-serif;
+}
+
+.blue-theme {
+  color: whitesmoke;
+  background-color: $blue;
+  .accent {
+    color: $yellow;
+  }
+}
+
+.full-width {
+  width: 100%;
+  margin: 0;
+  border: 0;
+}
