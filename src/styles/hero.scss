@@ -8,13 +8,17 @@
 }
 
 .hello {
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-name: fadeInLeft;
   text-align: left;
 }
 
 @keyframes fadeInLeft {
   0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  33% {
     opacity: 0;
     transform: translateX(-30px);
   }
