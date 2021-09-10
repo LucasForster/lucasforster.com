@@ -1,10 +1,12 @@
 import React from "react";
 
+import Hero from '../components/Hero';
+
 import '../styles/index.scss';
 
 const Index = () => (
   <div className="index">
-    <h1>lucasforster.com</h1>
+    <Hero/>
   </div>
 );
 
