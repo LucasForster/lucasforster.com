@@ -3,7 +3,7 @@ import React from 'react';
 import '../styles/hero.scss';
 
 const Hero = () => (
-  <div className="blue-theme full-width">
+  <div className="blue-theme">
     <h1 className="hello">
       Hi, my name is&nbsp;
       <span className="accent">
