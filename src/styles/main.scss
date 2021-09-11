@@ -15,6 +15,8 @@ h1 {
 .full-height {
   height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
   padding-left: 5rem;
 }
