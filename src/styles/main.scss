@@ -12,6 +12,14 @@ h1 {
   font-size: $font-size-big;
 }
 
+a.button {
+  font-size: $font-size-default;
+  text-decoration: none;
+  color: inherit;
+  border: solid thick;
+  padding: 1rem;
+}
+
 .full-height {
   height: 100vh;
   display: flex;
