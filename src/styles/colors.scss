@@ -1,0 +1,14 @@
+// https://color.adobe.com/de/Vitamin-C-color-theme-492199/
+$blue: #004358;
+$green: #1f8a70;
+$lime: #bedb39;
+$yellow: #ffe11a;
+$orange: #fd7400;
+
+.blue-theme {
+  color: whitesmoke;
+  background-color: $blue;
+  .accent {
+    color: $yellow;
+  }
+}
