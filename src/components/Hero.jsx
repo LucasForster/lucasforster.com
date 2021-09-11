@@ -1,9 +1,7 @@
 import React from 'react';
 
-import '../styles/hero.scss';
-
 const Hero = () => (
-  <div className="hero blue-theme full-height">
+  <div className="blue-theme full-height">
     <h1 className="fade-in-left">
       Hi, my name is&nbsp;
       <span className="accent">
