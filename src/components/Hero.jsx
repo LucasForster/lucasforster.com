@@ -10,6 +10,8 @@ const Hero = () => (
         Lucas Forster
       </span>
       .
+      <br/>
+      I'm a developer available for hire.
     </h1>
   </div>
 );
