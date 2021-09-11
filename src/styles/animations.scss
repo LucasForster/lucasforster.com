@@ -17,3 +17,20 @@
     transform: translateX(0);
   }
 }
+
+.reveal-delayed {
+  animation-duration: 2.5s;
+  animation-name: revealDelayed;
+}
+
+@keyframes revealDelayed {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
