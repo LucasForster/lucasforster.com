@@ -4,3 +4,21 @@ publish = "public/"
 
 [[plugins]]
 package = "@netlify/plugin-gatsby"
+
+[[redirects]]
+from = "https://lucas-forster.com/*"
+to = "https://lucasforster.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://lucasforster.de/*"
+to = "https://lucasforster.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://lucas-forster.de/*"
+to = "https://lucasforster.com/:splat"
+status = 301
+force = true
