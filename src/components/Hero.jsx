@@ -11,7 +11,7 @@ const Hero = () => (
       <br/>
       I'm a developer available for hire.
     </h1>
-    <a className="button reveal-delayed" href="mailto:lucas.forster@lehmenkaut.de">
+    <a className="button reveal-delayed" href="mailto:mail@lucasforster.com">
       Contact
     </a>
   </div>
