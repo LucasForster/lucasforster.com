@@ -1,7 +1,9 @@
-export type languageCode = "en" | "de";
+export const languageCodes = ["en", "de"] as const;
 
 export const resources: {
-  [key in languageCode]: { translation: { [key: string]: string } };
+  [key in typeof languageCodes[number]]: {
+    translation: { [key: string]: string };
+  };
 } = {
   en: {
     translation: {
