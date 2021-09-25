@@ -20,9 +20,9 @@ i18next
       },
       de: {
         translation: {
-          "Hi, my name is": "Hallo, mein name ist",
+          "Hi, my name is": "Hallo, mein Name ist",
           "I'm a developer available for hire.":
-            "Ich bin ein anwerbbarer Entwickler.",
+            "Ich bin ein verfügbarer Entwickler.",
         },
       },
     },
