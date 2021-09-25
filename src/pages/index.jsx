@@ -1,5 +1,6 @@
 import React from "react";
 
+import "../i18next";
 import Hero from '../components/Hero';
 
 import 'normalize.css';
