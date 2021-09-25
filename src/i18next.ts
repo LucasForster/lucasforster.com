@@ -1,6 +1,7 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import I18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
+import { resources } from "../locales";
 
 i18next
   .use(I18nextBrowserLanguageDetector)
@@ -10,22 +11,7 @@ i18next
     interpolation: {
       escapeValue: false,
     },
-    resources: {
-      en: {
-        translation: {
-          "Hi, my name is": "Hi, my name is",
-          "I'm a developer available for hire.":
-            "I'm a developer available for hire.",
-        },
-      },
-      de: {
-        translation: {
-          "Hi, my name is": "Hallo, mein Name ist",
-          "I'm a developer available for hire.":
-            "Ich bin ein verfügbarer Entwickler.",
-        },
-      },
-    },
+    resources,
   });
 
 export default i18next;
