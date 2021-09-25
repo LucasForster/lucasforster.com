@@ -10,6 +10,22 @@ i18next
     interpolation: {
       escapeValue: false,
     },
+    resources: {
+      en: {
+        translation: {
+          "Hi, my name is": "Hi, my name is",
+          "I'm a developer available for hire.":
+            "I'm a developer available for hire.",
+        },
+      },
+      de: {
+        translation: {
+          "Hi, my name is": "Hallo, mein name ist",
+          "I'm a developer available for hire.":
+            "Ich bin ein anwerbbarer Entwickler.",
+        },
+      },
+    },
   });
 
 export default i18next;
