@@ -5,9 +5,11 @@ import Hero from '../components/Hero';
 
 import 'normalize.css';
 import '../styles/main.scss';
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 const Index = () => (
-  <div className="index">
+  <div className="blue-theme">
+    <LanguageSwitcher/>
     <Hero/>
   </div>
 );

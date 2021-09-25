@@ -6,7 +6,7 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="blue-theme full-height">
+    <div className="full-height">
       <h1 className="fade-in-left">
         {t("Hi, my name is")}&nbsp;
         <span className="accent">

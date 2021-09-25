@@ -20,6 +20,17 @@ a.button {
   padding: 1rem;
 }
 
+button {
+  font-size: $font-size-default;
+  color: inherit;
+  cursor: pointer;
+}
+
+button.frameless {
+  background: inherit;
+  border: none;
+}
+
 .full-height {
   height: 100vh;
   display: flex;
@@ -27,4 +38,9 @@ a.button {
   align-items: start;
   justify-content: center;
   padding-left: 5rem;
+}
+
+.align-right {
+  display: flex;
+  flex-direction: row-reverse;
 }
