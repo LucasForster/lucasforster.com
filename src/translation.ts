@@ -56,12 +56,11 @@ i18next.use(I18nextBrowserLanguageDetector).use(initReactI18next).init({
 export const languages = [fallbackLng, ...targetLngs] as const;
 
 export const useTranslation = () => {
-  const {
-    t: i18nextT,
-    i18n: { changeLanguage },
-  } = useI18nextTranslation();
+  const { t: i18nextT, i18n } = useI18nextTranslation();
 
   const t = (key: typeof keys[number]) => i18nextT(key);
+  const changeLanguage = (language: typeof languages[number]) =>
+    i18n.changeLanguage(language);
 
   return { t, changeLanguage };
 };
