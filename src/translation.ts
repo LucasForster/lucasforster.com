@@ -4,6 +4,7 @@ import {
   useTranslation as useI18nextTranslation,
 } from "react-i18next";
 import I18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
+import { useMemo } from "react";
 
 // languages
 const fallbackLng = "en";
@@ -61,6 +62,10 @@ export const useTranslation = () => {
   const t = (key: typeof keys[number]) => i18nextT(key);
   const changeLanguage = (language: typeof languages[number]) =>
     i18n.changeLanguage(language);
+  const currentLanguage = useMemo(
+    () => i18n.resolvedLanguage as typeof languages[number],
+    [i18n.resolvedLanguage]
+  );
 
-  return { t, changeLanguage };
+  return { t, changeLanguage, currentLanguage };
 };
