@@ -1,8 +1,14 @@
 export const languageCodes = ["en", "de"] as const;
 
+const resourceKeys = [
+  "Contact",
+  "Hi, my name is",
+  "I'm a developer available for hire.",
+] as const;
+
 export const resources: {
   [key in typeof languageCodes[number]]: {
-    translation: { [key: string]: string };
+    translation: { [key in typeof resourceKeys[number]]: string };
   };
 } = {
   en: {
