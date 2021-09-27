@@ -59,9 +59,14 @@ export const languages = [fallbackLng, ...targetLngs] as const;
 export const useTranslation = () => {
   const { t: i18nextT, i18n } = useI18nextTranslation();
 
-  const t = (key: typeof keys[number]) => i18nextT(key);
-  const changeLanguage = (language: typeof languages[number]) =>
-    i18n.changeLanguage(language);
+  const t = useMemo(
+    () => (key: typeof keys[number]) => i18nextT(key),
+    [i18nextT]
+  );
+  const changeLanguage = useMemo(
+    () => (language: typeof languages[number]) => i18n.changeLanguage(language),
+    [i18n.changeLanguage]
+  );
   const currentLanguage = useMemo(
     () => i18n.resolvedLanguage as typeof languages[number],
     [i18n.resolvedLanguage]
