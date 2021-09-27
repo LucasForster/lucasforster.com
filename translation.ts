@@ -1,11 +1,13 @@
 import i18next from "i18next";
-import { initReactI18next } from "react-i18next";
+import {
+  initReactI18next,
+  useTranslation as useI18nextTranslation,
+} from "react-i18next";
 import I18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
 
 // languages
 const fallbackLng = "en";
 const targetLngs = ["de"] as const;
-export const languages = [fallbackLng, ...targetLngs] as const;
 
 // resources
 const keys = [
@@ -49,3 +51,17 @@ i18next.use(I18nextBrowserLanguageDetector).use(initReactI18next).init({
   fallbackLng,
   resources,
 });
+
+// exports
+export const languages = [fallbackLng, ...targetLngs] as const;
+
+export const useTranslation = () => {
+  const {
+    t: i18nextT,
+    i18n: { changeLanguage },
+  } = useI18nextTranslation();
+
+  const t = (key: typeof keys[number]) => i18nextT(key);
+
+  return { t, changeLanguage };
+};

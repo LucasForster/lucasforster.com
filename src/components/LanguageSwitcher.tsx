@@ -1,21 +1,13 @@
-import React, { useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import { languages } from "../../translation";
+import React from "react";
+import { languages, useTranslation } from "../../translation";
 
 const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
-
-  useEffect(() => {
-    console.log(i18n.languages);
-  }, []);
+  const { changeLanguage } = useTranslation();
 
   return (
     <div className="align-right">
       {languages.map((language) => (
-        <button
-          className="frameless"
-          onClick={() => i18n.changeLanguage(language)}
-        >
+        <button className="frameless" onClick={() => changeLanguage(language)}>
           {language.toUpperCase()}&nbsp;
         </button>
       ))}{" "}
