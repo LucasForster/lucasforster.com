@@ -2,27 +2,25 @@ import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import I18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
 
-export const languageCodes = ["en", "de"] as const;
+// languages
+const fallbackLng = "en";
+const targetLngs = ["de"] as const;
+export const languages = [fallbackLng, ...targetLngs] as const;
 
-const resourceKeys = [
+// resources
+const keys = [
   "Contact",
   "Hi, my name is",
   "I'm a developer available for hire.",
 ] as const;
 
-export const resources: {
-  [key in typeof languageCodes[number]]: {
-    translation: { [key in typeof resourceKeys[number]]: string };
+const translations: {
+  [language in typeof targetLngs[number]]: {
+    translation: {
+      [key in typeof keys[number]]: string;
+    };
   };
 } = {
-  en: {
-    translation: {
-      Contact: "Contact",
-      "Hi, my name is": "Hi, my name is",
-      "I'm a developer available for hire.":
-        "I'm a developer available for hire.",
-    },
-  },
   de: {
     translation: {
       Contact: "Kontakt",
@@ -33,15 +31,21 @@ export const resources: {
   },
 };
 
-i18next
-  .use(I18nextBrowserLanguageDetector)
-  .use(initReactI18next)
-  .init({
-    fallbackLng: "en",
-    interpolation: {
-      escapeValue: false,
+// config
+const keyIdentities = {
+  [fallbackLng]: {
+    translation: keys.reduce((acc, key) => ({ ...acc, key: key }), {}) as {
+      [key in typeof keys[number]]: key;
     },
-    resources,
-  });
+  },
+};
 
-export default i18next;
+const resources = {
+  ...keyIdentities,
+  ...translations,
+} as const;
+
+i18next.use(I18nextBrowserLanguageDetector).use(initReactI18next).init({
+  fallbackLng,
+  resources,
+});

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { languageCodes } from "../../translation";
+import { languages } from "../../translation";
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
@@ -11,7 +11,7 @@ const LanguageSwitcher = () => {
 
   return (
     <div className="align-right">
-      {languageCodes.map((language) => (
+      {languages.map((language) => (
         <button
           className="frameless"
           onClick={() => i18n.changeLanguage(language)}
