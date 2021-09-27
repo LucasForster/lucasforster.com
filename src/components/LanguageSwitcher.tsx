@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { languageCodes } from "../../locales";
+import { languageCodes } from "../../translation";
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();

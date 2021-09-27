@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../i18next";
+import "../../translation";
 import Hero from '../components/Hero';
 
 import 'normalize.css';
