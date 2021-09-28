@@ -1,18 +1,18 @@
 import React from "react";
-import { languages, useTranslation } from "../translation";
+import { useTranslation } from "react-i18next";
 
 const LanguageSwitcher = () => {
-  const { changeLanguage, currentLanguage } = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
     <div className="align-right">
-      {languages.map((language) => (
+      {["en", "de"].map((language) => (
         <button
           className="frameless"
           style={{
-            fontWeight: currentLanguage === language ? "bold" : "normal",
+            fontWeight: i18n.resolvedLanguage === language ? "bold" : "normal",
           }}
-          onClick={() => changeLanguage(language)}
+          onClick={() => i18n.changeLanguage(language)}
         >
           {language.toUpperCase()}&nbsp;
         </button>

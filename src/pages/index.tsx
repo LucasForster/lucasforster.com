@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../translation";
+import "../model/translation";
 import Hero from "../components/Hero";
 
 import "normalize.css";
