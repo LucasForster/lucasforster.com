@@ -1,12 +1,13 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { lngs } from "../model/translation";
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
   return (
     <div className="align-right">
-      {["en", "de"].map((language) => (
+      {lngs.map((language) => (
         <button
           className="frameless"
           style={{
