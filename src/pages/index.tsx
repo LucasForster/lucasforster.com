@@ -8,12 +8,10 @@ import "../styles/main.scss";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 
 const Index = () => (
-  <Suspense fallback="loading...">
-    <div className="blue-theme">
-      <LanguageSwitcher />
-      <Hero />
-    </div>
-  </Suspense>
+  <div className="blue-theme">
+    <LanguageSwitcher />
+    <Hero />
+  </div>
 );
 
 export default Index;

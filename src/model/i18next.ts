@@ -19,11 +19,19 @@ export type ResourcesType = {
 };
 
 // init
-i18next.use(LanguageDetector).use(initReactI18next).use(HttpApi).init({
-  defaultNS,
-  fallbackLng,
-  ns,
-  supportedLngs,
-});
+i18next
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .use(HttpApi)
+  .init({
+    defaultNS,
+    fallbackLng,
+    ns,
+    react: {
+      useSuspense: false,
+      wait: true,
+    },
+    supportedLngs,
+  });
 
 export default i18next;
