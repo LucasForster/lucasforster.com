@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 
-import "../model/translation";
+import "../model/i18next";
 import Hero from "../components/Hero";
 
 import "normalize.css";
