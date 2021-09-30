@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true, // needed for `import React from "react";`
+    "jsx": "preserve",
+    "resolveJsonModule": true
+  }
+}
