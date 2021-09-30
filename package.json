@@ -12,6 +12,7 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
+    "test": "tsc --noEmit && jest",
     "clean": "gatsby clean"
   },
   "dependencies": {
@@ -28,6 +29,8 @@
   },
   "devDependencies": {
     "@netlify/plugin-gatsby": "^1.0.3",
+    "@types/jest": "^27.0.2",
+    "@types/react-test-renderer": "^17.0.1",
     "babel-jest": "^27.2.4",
     "babel-preset-gatsby": "^1.14.0",
     "identity-obj-proxy": "^3.0.0",
