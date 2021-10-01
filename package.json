@@ -12,6 +12,7 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
+    "test": "tsc --noEmit && jest",
     "clean": "gatsby clean"
   },
   "dependencies": {
