@@ -9,6 +9,6 @@ export const defaultNS = "translation";
 export const ns = [defaultNS] as const;
 
 // type
-export type ResourcesType = {
-  translation: typeof enTranslation;
+export const fallbackLngResources = {
+  translation: enTranslation,
 };
