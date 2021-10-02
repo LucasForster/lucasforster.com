@@ -1,6 +1,7 @@
 import fs from "fs";
 
-import { loadPath, ns, supportedLngs } from "./i18next-config";
+import { fallbackLng, loadPath, ns, supportedLngs } from "./i18next-config";
+import fallbackLngResources from "./i18next-fallback-resources";
 
 const FS_PREFIX = "static/";
 const RQ_PREFIX = "../../" + FS_PREFIX;
@@ -42,3 +43,20 @@ describe("locales path", () => {
     }
   });
 });
+
+describe(`fallback language (${fallbackLng})`, () => {
+  const resources = requireResources([fallbackLng], ns)[fallbackLng];
+
+  it("maps all keys to themself", () => {
+    for (const namespace in ns) {
+      for (const key in resources[namespace]) {
+        expect(key).toEqual(resources[key]);
+      }
+    }
+  });
+
+  it("matches the resource object provided to i18next for typing", () => {
+    expect(resources).toEqual(fallbackLngResources);
+  });
+});
+
