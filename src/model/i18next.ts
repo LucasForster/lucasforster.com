@@ -3,7 +3,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import HttpApi from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 
-import { defaultNS, fallbackLng, ns, supportedLngs } from "./i18next.config";
+import { defaultNS, fallbackLng, ns, supportedLngs } from "./i18next-config";
 
 // init
 i18next
