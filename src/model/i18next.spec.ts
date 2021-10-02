@@ -60,3 +60,16 @@ describe(`fallback language (${fallbackLng})`, () => {
   });
 });
 
+const targetLngs = supportedLngs.filter((lng) => lng !== fallbackLng);
+describe(`target language(s) (${targetLngs})`, () => {
+  it("define translations of all keys from fallback language", () => {
+    const resources = requireResources(supportedLngs, ns);
+    for (const lng of targetLngs) {
+      for (const nmsp of ns) {
+        for (const key in resources[fallbackLng][nmsp]) {
+          expect(typeof resources[lng][nmsp][key]).toBeDefined();
+        }
+      }
+    }
+  });
+});
