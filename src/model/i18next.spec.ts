@@ -1,18 +1,18 @@
 import fs from "fs";
 
-import { ns, supportedLngs } from "./i18next-config";
+import { loadPath, ns, supportedLngs } from "./i18next-config";
 
-const FS_PATH = "static/locales";
-const RQ_PATH = `../../${FS_PATH}`;
+const FS_PREFIX = "static/";
+const RQ_PREFIX = "../../" + FS_PREFIX;
 
 const requireResources = (lngs: readonly string[], ns: readonly string[]) =>
   lngs.reduce(
     (resources, lng) => ({
       ...resources,
       [lng]: ns.reduce(
-        (resource, namespace) => ({
+        (resource, nmsp) => ({
           ...resource,
-          [namespace]: require(`${RQ_PATH}/${lng}/${namespace}.json`),
+          [nmsp]: require(RQ_PREFIX + loadPath([lng], [nmsp])),
         }),
         {}
       ),
@@ -20,19 +20,11 @@ const requireResources = (lngs: readonly string[], ns: readonly string[]) =>
     {}
   );
 
-describe(FS_PATH, () => {
-  it("contains a folder for each supported language", () => {
-    const folderEntries = fs.readdirSync(FS_PATH);
+describe("locales path", () => {
+  it("contains a file for each combination of language and namespace", () => {
     for (const lng of supportedLngs) {
-      expect(folderEntries).toContain(lng);
-    }
-  });
-
-  it("contains a file for each namespace per supported language", () => {
-    for (const lng of supportedLngs) {
-      const fileList = fs.readdirSync(`${FS_PATH}/${lng}`);
       for (const nmsp of ns) {
-        expect(fileList).toContain(`${nmsp}.json`);
+        fs.existsSync(FS_PREFIX + loadPath([lng], [nmsp]));
       }
     }
   });
