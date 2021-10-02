@@ -23,28 +23,30 @@ const requireResources = (lngs: readonly string[], ns: readonly string[]) =>
 describe(FS_PATH, () => {
   it("contains a folder for each supported language", () => {
     const folderEntries = fs.readdirSync(FS_PATH);
-    supportedLngs.forEach((lng) => expect(folderEntries).toContain(lng));
+    for (const lng of supportedLngs) {
+      expect(folderEntries).toContain(lng);
+    }
   });
 
   it("contains a file for each namespace per supported language", () => {
-    supportedLngs.forEach((lng) => {
+    for (const lng of supportedLngs) {
       const fileList = fs.readdirSync(`${FS_PATH}/${lng}`);
-      ns.forEach((namespace) =>
-        expect(fileList).toContain(`${namespace}.json`)
-      );
-    });
+      for (const nmsp of ns) {
+        expect(fileList).toContain(`${nmsp}.json`);
+      }
+    }
   });
 
   it("contains only string keys and values", () => {
     const resources = requireResources(supportedLngs, ns);
-    supportedLngs.forEach((lng) => {
-      ns.forEach((namespace) => {
-        const resource = resources[lng][namespace];
-        for (const key in resource.keys) {
+    for (const lng of supportedLngs) {
+      for (const nmsp of ns) {
+        const resource = resources[lng][nmsp];
+        for (const key in resource) {
           expect(typeof key).toEqual("string");
           expect(typeof resource[key]).toEqual("string");
         }
-      });
-    });
+      }
+    }
   });
 });
