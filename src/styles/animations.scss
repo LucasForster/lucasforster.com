@@ -19,7 +19,7 @@
 }
 
 .reveal-delayed {
-  animation-duration: 2.5s;
+  animation-duration: 1.5s;
   animation-name: revealDelayed;
 }
 
@@ -27,7 +27,7 @@
   0% {
     opacity: 0;
   }
-  80% {
+  66% {
     opacity: 0;
   }
   100% {
