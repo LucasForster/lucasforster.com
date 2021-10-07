@@ -22,3 +22,9 @@ from = "https://lucas-forster.de/*"
 to = "https://lucasforster.com/:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "/portfolio"
+to = "https://lucasforster.github.io/portfolio/portfolio.pdf"
+status = 200
+force = true
