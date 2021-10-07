@@ -13,9 +13,17 @@ const Hero = () => {
         <br />
         {t("I'm a developer available for hire.")}
       </h1>
-      <a className="button reveal-delayed" href="mailto:mail@lucasforster.com">
-        {t("Contact")}
-      </a>
+      <div className="align-left">
+        <a
+          className="button reveal-delayed"
+          href="mailto:mail@lucasforster.com"
+        >
+          {t("Contact")}
+        </a>
+        <a className="button reveal-delayed" href="/portfolio">
+          {t("Portfolio")}
+        </a>
+      </div>
     </div>
   );
 };

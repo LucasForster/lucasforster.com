@@ -18,6 +18,7 @@ a.button {
   color: inherit;
   border: solid thick;
   padding: 1rem;
+  margin-right: $margin;
 }
 
 button {
@@ -39,6 +40,11 @@ button.frameless {
   align-items: start;
   justify-content: center;
   padding-left: 5rem;
+}
+
+.align-left {
+  display: flex;
+  flex-direction: row;
 }
 
 .align-right {
