@@ -1,6 +1,10 @@
 {
   "Contact": "Kontakt",
+  "Email": "E-Mail",
   "Hi, my name is": "Hallo, mein Name ist",
   "I'm a developer available for hire.": "Ich bin ein selbstständiger Softwareentwickler.",
-  "Portfolio": "Portfolio (Englisch)"
+  "Message": "Nachricht",
+  "Name": "Name",
+  "Portfolio": "Portfolio (Englisch)",
+  "Send": "Senden"
 }

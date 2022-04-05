@@ -1,6 +1,10 @@
 {
   "Contact": "Contact",
+  "Email": "Email",
   "Hi, my name is": "Hi, my name is",
   "I'm a developer available for hire.": "I'm a developer available for hire.",
-  "Portfolio": "Portfolio"
+  "Message": "Message",
+  "Name": "Name",
+  "Portfolio": "Portfolio",
+  "Send": "Send"
 }
