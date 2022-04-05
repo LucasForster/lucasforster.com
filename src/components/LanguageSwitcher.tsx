@@ -10,14 +10,19 @@ const LanguageSwitcher = () => {
       {supportedLngs.map((language) => (
         <button
           className="frameless"
-          style={{
-            fontWeight: i18n.resolvedLanguage === language ? "bold" : "normal",
-          }}
+          style={
+            i18n.resolvedLanguage === language
+              ? {
+                  fontWeight: "bold",
+                  textDecoration: "underline",
+                }
+              : undefined
+          }
           onClick={() => i18n.changeLanguage(language)}
         >
-          {language.toUpperCase()}&nbsp;
+          {language.toUpperCase()}
         </button>
-      ))}{" "}
+      ))}
     </div>
   );
 };
